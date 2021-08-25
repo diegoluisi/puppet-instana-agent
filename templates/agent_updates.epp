@@ -1,0 +1,7 @@
+# Instana Update Manager configuration.
+# AUTO for automatic updates with given schedule. OFF for no automatic updates.
+mode = <%= $update_enabled %>
+# DAY for daily, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+every = <%= $update_interval %>
+# Time is hh:mm in 24 hours format.
+at = <%= $update_time %>

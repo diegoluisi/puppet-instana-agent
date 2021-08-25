@@ -1,0 +1,5 @@
+# Internal Instana Agent configuration.
+scheduler.threads = 2
+http.threads = 2
+use-cloud-provider-id = true
+mode=<%= $agent_mode %>

@@ -1,0 +1,20 @@
+{
+  "Gemfile": "908da17972afe2216bbc2846b85a05a3",
+  "LICENSE": "9530ff3370c0cb3e3a34d62fab59cc60",
+  "Puppetfile": "f1f3d698d7191b7cc054dfc6daa83061",
+  "README.md": "951073dfc4c37ae6d40f758404b4a632",
+  "Rakefile": "08dbef0c23a205ba3f40ad1cb348225c",
+  "facts.d/is_systemd.rb": "42dd126844936873791a603605267b3a",
+  "manifests/config.pp": "d581e3d4b181c23c828d0c03d0d8458b",
+  "manifests/init.pp": "2f6735cdb73180e60ec53f3ecb3dc014",
+  "manifests/install.pp": "bf762434555f39bcf6c45a4907c5f7c8",
+  "manifests/required_config.pp": "bc0edfbf0560b20df5bd510f1f5cbab9",
+  "manifests/service.pp": "e8660cbecff09e21cdb66aa4fe0f2a22",
+  "metadata.json": "f1834a8d1aee83a07cbc796705d8a276",
+  "templates/agent_backend.epp": "b71486c980046ba6a3ea3dd7ca85e933",
+  "templates/agent_configuration.epp": "2d383ca9f29d25bccf3ba8a4bd823a29",
+  "templates/agent_sensorpin.epp": "46a70b0693004fee342972cc3f517cd4",
+  "templates/agent_updates.epp": "b59aac24caffd0d7d228528d6439f604",
+  "templates/mvn-settings.epp": "f1840df643dd2c55efa29a8fd09fa104",
+  "templates/pax-mvn-cfg.epp": "8083c662f1b65ddde2fabd29a521a2b9"
+}

@@ -1,0 +1,70 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <localRepository>data/repo</localRepository>
+  <servers>
+    <server>
+      <id>features</id>
+      <username>_</username>
+      <password><%= $agent_key %></password>
+    </server>
+    <server>
+      <id>shared</id>
+      <username>_</username>
+      <password><%= $agent_key %></password>
+    </server>
+    <% if $mirrors_require_auth { %>
+      <server>
+        <id>features-mirror</id>
+        <username><%= $mirrors_username %></username>
+        <password><%= $mirrors_password %></password>
+      </server>
+      <server>
+        <id>shared-mirror</id>
+        <username><%= $mirrors_username %></username>
+        <password><%= $mirrors_password %></password>
+      </server>
+    <% } %>
+  </servers>
+
+  <!-- If you want to access the Instana repository using an HTTP/Socks proxy,
+       uncomment the proxies section and insert proxy details. -->
+  <!-- https://maven.apache.org/guides/mini/guide-proxies.html -->
+<% if $proxy_enabled { %>
+  <proxies>
+    <proxy>
+      <id>agent-proxy</id>
+      <active>true</active>
+      <protocol><%= $proxy_type %></protocol>
+      <host><%= $proxy_host %></host>
+      <port><%= $proxy_port %></port>
+      <% if $proxy_username != '' { %><username><%= $proxy_username %></username><% } %>
+      <% if $proxy_password != '' { %><password><%= $proxy_password %></password><% } %>
+    </proxy>
+  </proxies>
+<% } %>
+
+  <!-- If you want to use a company internal mirror, make sure that mirror is
+       configured to use the Instana repository, uncomment the mirrors section
+       and insert maven mirror details.
+       If the mirror also requires auth it can be added above. -->
+  <!-- https://maven.apache.org/guides/mini/guide-mirror-settings.html -->
+  <!-- Repos that need to be mirrored -->
+  <!-- feature: https://artifact-public.instana.io/artifactory/features-public -->
+  <!-- shared: https://artifact-public.instana.io/artifactory/shared -->
+  <% if $mirrors_enabled { %>
+  <mirrors>
+    <mirror>
+      <id>features-mirror</id>
+      <url><%= $release_repourl %></url>
+      <mirrorOf>features</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>shared-mirror</id>
+      <url><%= $shared_repourl %></url>
+      <mirrorOf>shared</mirrorOf>
+    </mirror>
+  </mirrors>
+  <% } %>
+</settings>
